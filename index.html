@@ -1,9 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-    <title>Meu site</title>
+    <meta charset="UTF-8">
+    <title>Spawne um Gato🐱</title>
+
+    <style>
+        body {
+            background-color: black;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        img {
+            position: absolute;
+            width: 150px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Oi, esse é meu site!</h1>
+
+<script>
+    document.addEventListener("click", function(e) {
+        const img = document.createElement("img");
+
+        // API de gatinho 🐱
+        img.src = "https://cataas.com/cat?" + Math.random();
+
+        // posição onde clicou
+        img.style.left = e.clientX + "px";
+        img.style.top = e.clientY + "px";
+
+        document.body.appendChild(img);
+    });
+</script>
+
 </body>
 </html>
